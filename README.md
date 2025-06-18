@@ -31,7 +31,7 @@ Best of luck!
 
 ## Overview of the Application
 
-This application is a basic E-Commerce interface created with create-react-app. 
+This application is a basic E-Commerce interface created with create-react-app.
 
 The application enables a user to browse products and add them to a basket.
 
@@ -40,13 +40,19 @@ Once the products have been added to the basket, the user can checkout their sho
 - `/products` - Shows a list of available products to a user.
 - `/checkout` - Displays the user's shopping basket items, the total order value, and allows the user to place the order.
 
+The project is a hybrid TS/JS project, please use Typescript where possible.
+
 ## Tasks
 
-### Task 1 - Fix the Routing
+### Task 1 - Upgrade Packages (MUI, React Router)
+
+MUI and React Router are out of date, please update both to their latest versions.
+
+### Task 2 - Fix the Routing
 
 The routes described above are currently not functional. If you run `npm start`, an error will be presented due to the inability to navigate routes such as `/products`. Your task is to debug and rectify this issue.
 
-### Task 2 - React State Management
+### Task 3 - React State Management
 
 On the `/products` route, a list of products should be displayed.
 
@@ -59,20 +65,18 @@ However, there exists an issue — once the application navigates to the `/check
 
 These items need to persist across all pages (including `/checkout`) to ensure that the user does not lose the items in their basket when the pages change.
 
-Use your knowledge of React state management to resolve this issue. Consider options such as the Context API, Redux, etc.
-
-We would like you to be abe to discuss your reasoning behind your chosen solution.
+Please use Redux to solve this problem.
 
 Additionally, please implement a confirmation message to notify users when their order gets successfully placed.
 (Note: The order doesn't need to be saved; this is merely a dummy confirmation.)
 
-### Task 3 - Making Improvements
+### Task 4 - Making Improvements
 
 You may have noticed that when you click 'Add to basket' multiple times for a product, its entries get duplicated in the shopping cart.
 
 Please resolve this issue by increasing the quantity of the product rather than adding a new entry whenever it is added to the basket multiple times.
 
-### Task 4 - Component Creation
+### Task 5 - Component Creation
 
 By now, you should have a working E-Commerce system! Users can browse products and confirm their orders using the now functional shopping basket.
 
@@ -84,7 +88,7 @@ Users should be able to click a 'View Detail' button on each product listed on t
 
 For more information, have a look at the API being used to list the products; this will give you an idea of the information available for display on the product detail page.
 
-### Task 5 - Feature Implementation
+### Task 6 - Feature Implementation
 
 Each product returned from the API has a 'discount' property, which is currently not being utilised in the application.
 
