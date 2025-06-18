@@ -76,19 +76,7 @@ You may have noticed that when you click 'Add to basket' multiple times for a pr
 
 Please resolve this issue by increasing the quantity of the product rather than adding a new entry whenever it is added to the basket multiple times.
 
-### Task 5 - Component Creation
-
-By now, you should have a working E-Commerce system! Users can browse products and confirm their orders using the now functional shopping basket.
-
-However, the product's details are not comprehensive.
-
-We would like you to add a new route `product/{id}` to display detailed information about the product.
-
-Users should be able to click a 'View Detail' button on each product listed on the `/products` page.
-
-For more information, have a look at the API being used to list the products; this will give you an idea of the information available for display on the product detail page.
-
-### Task 6 - Feature Implementation
+### Task 5 - Feature Implementation
 
 Each product returned from the API has a 'discount' property, which is currently not being utilised in the application.
 
