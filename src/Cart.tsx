@@ -1,5 +1,15 @@
-import React from "react";
-import { Button, List, ListItem, ListItemText } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Alert,
+  Button,
+  List,
+  ListItem,
+  ListItemText,
+  Snackbar,
+} from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
+import { clearCart } from "./store/cartSlice";
+import { useDispatch } from "react-redux";
 
 type Product = {
   title: string;
@@ -18,6 +28,20 @@ function Cart({
   text = "Browse the items in your cart and then click Checkout",
   mode = "browse",
 }: CartProps) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const handleConfirmOrder = () => {
+    dispatch(clearCart());
+    setShowSuccess(true);
+
+    setTimeout(() => {
+      setShowSuccess(false);
+      navigate("/products");
+    }, 2000);
+  };
+
   return (
     <div>
       <h1>Shopping Cart</h1>
@@ -36,22 +60,28 @@ function Cart({
         Total Price: {products.reduce((total, { price }) => total + price, 0)}
       </div>
       {mode === "browse" ? (
-        <Button
-          style={{ marginBottom: 10 }}
-          href={"/checkout"}
-          variant="contained"
-        >
-          Checkout
-        </Button>
+        <Link to="/checkout">
+          <Button style={{ marginBottom: 10 }} variant="contained">
+            Checkout
+          </Button>
+        </Link>
       ) : (
         <Button
           style={{ marginBottom: 10 }}
-          href={"/checkout"}
+          onClick={handleConfirmOrder}
           variant="contained"
         >
           Confirm Order
         </Button>
       )}
+      <Snackbar
+        open={showSuccess}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert severity="success" variant="filled">
+          Order placed successfully!
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

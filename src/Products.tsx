@@ -46,11 +46,14 @@ class ProductList extends React.Component<Props, ProductListState> {
     this.setState({ productsInCart: this.props.cartItems });
   }
 
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps.cartItems !== this.props.cartItems) {
+      this.setState({ productsInCart: this.props.cartItems });
+    }
+  }
+
   addToCart = (product: Product) => {
     const newProduct = { ...product, quantity: 1 };
-    this.setState((prevState) => ({
-      productsInCart: [...prevState.productsInCart, newProduct],
-    }));
     this.props.addToCart(newProduct);
   };
 
