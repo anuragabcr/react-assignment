@@ -83,3 +83,25 @@ Each product returned from the API has a 'discount' property, which is currently
 Please add a new feature to the `Cart` component, which calculates a new 'Total price' using the products discount value.
 
 This updated total should be shown next to the original total and reflect the total price after applying discounts.
+
+
+
+# Completed Task Preview
+
+### Task 1
+![Task 1](Task_1.png)
+
+### Task 2
+![Task 2](Task_2.png)
+
+### Task 3
+![Task 3](Task_3.png)
+
+### Task 4
+![Task 4](Task_4.png)
+
+### Task 5
+![Task 5](Task_5.png)
+
+### Demo
+https://github.com/anuragabcr/react-assignment/blob/main/demo.mov
